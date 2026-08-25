@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<!-- Metatags para Prévia no WhatsApp / Redes Sociais -->
+    <meta property="og:title" content="Marlon Botelho — Soluções Digitais">
+    <meta property="og:description" content="Catálogo comercial: Site, redes sociais, atendimento automático e tráfego pago.">
+    <meta property="og:image" content="https://lh3.googleusercontent.com/d/1NPTyb5V5j9Z2QzZ2WalvFVA4aYnT3zWm">
+    <meta property="og:url" content="COLE_AQUI_O_LINK_DO_SEU_GITHUB_PAGES">
+    <meta property="og:type" content="website">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marlon Botelho — Soluções Digitais | Catálogo Comercial Premium</title>
+
+    <!-- Fontes de Alta Fidelidade -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet">
+
+    <style>
+      :root {
+        --bg-base: #04070b;
+        --bg-surface: #090e17;
+        --bg-card: rgba(15, 23, 38, 0.7);
+        --bg-card-hover: rgba(22, 34, 54, 0.85);
+        --border-subtle: rgba(255, 255, 255, 0.08);
+        --border-glow: rgba(0, 210, 255, 0.35);
+
+        --accent-cyan: #00e5ff;
+        --accent-blue: #0066ff;
+        --accent-glow: #2979ff;
+        --accent-orange: #ff5500;
+        --accent-orange-glow: #ff7700;
+
+        --text-white: #ffffff;
+        --text-main: #f1f5f9;
+        --text-muted: #94a3b8;
+        --text-dim: #64748b;
+
+        --radius-sm: 10px;
+        --radius-md: 16px;
+        --radius-lg: 24px;
+        --radius-full: 9999px;
+
+        --shadow-ambient: 0 20px 50px rgba(0, 0, 0, 0.6);
+        --shadow-glow-cyan: 0 0 30px rgba(0, 229, 255, 0.15);
+        --shadow-glow-orange: 0 10px 30px rgba(255, 85, 0, 0.35);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        background-color: #020406;
+        color: var(--text-main);
+        font-size: 15.5px;
+        line-height: 1.6;
+      }
+
+      .catalog-wrapper {
+        max-width: 840px;
+        margin: 0 auto;
+      }
+
+      /* BOTÃO FLUTUANTE DE IMPRIMIR PDF */
+      .btn-print-float {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 9999;
+        background: rgba(9, 14, 23, 0.85);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(0, 229, 255, 0.35);
+        color: var(--accent-cyan);
+        padding: 8px 16px;
+        border-radius: var(--radius-full);
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        transition: all 0.2s ease;
+      }
+
+      .btn-print-float:hover {
+        background: rgba(0, 229, 255, 0.15);
+        border-color: var(--accent-cyan);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 25px rgba(0, 229, 255, 0.25);
+      }
+
+      /* PÁGINA (PADRÃO A4 / DISPLAY DIGITAL) */
+      .page {
+        width: 100%;
+        min-height: 1180px;
+        padding: 55px 50px;
+        background: radial-gradient(circle at 85% 10%, rgba(0, 102, 255, 0.08) 0%, transparent 50%),
+          radial-gradient(circle at 10% 90%, rgba(0, 229, 255, 0.05) 0%, transparent 40%),
+          var(--bg-surface);
+        border: 1px solid var(--border-subtle);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        box-shadow: var(--shadow-ambient);
+        overflow: hidden;
+        page-break-after: always;
+        page-break-inside: avoid;
+      }
+
+      /* CABEÇALHO DA PÁGINA */
+      .page-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--border-subtle);
+        margin-bottom: 28px;
+      }
+
+      .status-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(0, 229, 255, 0.08);
+        border: 1px solid rgba(0, 229, 255, 0.25);
+        padding: 5px 14px;
+        border-radius: var(--radius-full);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: var(--accent-cyan);
+      }
+
+      .status-dot {
+        width: 6px;
+        height: 6px;
+        background-color: var(--accent-cyan);
+        border-radius: 50%;
+        box-shadow: 0 0 8px var(--accent-cyan);
+      }
+
+      .header-index {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 12px;
+        color: var(--text-dim);
+        letter-spacing: 1px;
+        font-weight: 700;
+      }
+
+      /* RODAPÉ DA PÁGINA */
+      .page-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 18px;
+        border-top: 1px solid var(--border-subtle);
+        font-size: 12px;
+        color: var(--text-dim);
+        margin-top: 25px;
+      }
+
+      .brand-signature {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .brand-signature-avatar {
+        width: 24px;
+        height: 24px;
+        background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 11px;
+        color: #fff;
+      }
+
+      /* TIPOGRAFIA & TÍTULOS */
+      h1.hero-title {
+        font-size: 44px;
+        font-weight: 800;
+        line-height: 1.12;
+        letter-spacing: -1.5px;
+        color: var(--text-white);
+        margin-bottom: 20px;
+      }
+
+      h2.page-title {
+        font-size: 32px;
+        font-weight: 800;
+        line-height: 1.2;
+        letter-spacing: -0.8px;
+        color: var(--text-white);
+        margin-bottom: 12px;
+      }
+
+      .gradient-text-cyan {
+        background: linear-gradient(135deg, #ffffff 30%, var(--accent-cyan) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .lead-paragraph {
+        font-size: 17px;
+        color: var(--text-muted);
+        line-height: 1.55;
+        margin-bottom: 24px;
+      }
+
+      /* CARDS & GLASSMORPHISM */
+      .glass-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-md);
+        padding: 24px;
+        backdrop-filter: blur(12px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      }
+
+      .glass-card-highlight {
+        background: linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(0, 229, 255, 0.05) 100%), var(--bg-card);
+        border: 1px solid rgba(0, 229, 255, 0.25);
+        border-radius: var(--radius-md);
+        padding: 22px 24px;
+        margin-bottom: 22px;
+      }
+
+      .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+
+      /* MÍDIA & IMAGENS */
+      .hero-media-wrapper {
+        width: 100%;
+        height: 220px;
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        position: relative;
+        border: 1px solid var(--border-subtle);
+        margin-bottom: 22px;
+        box-shadow: var(--shadow-ambient);
+        background: #0d1520;
+      }
+
+      .hero-media-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .media-pill-tag {
+        position: absolute;
+        bottom: 12px;
+        left: 12px;
+        background: rgba(4, 7, 11, 0.85);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        padding: 6px 14px;
+        border-radius: var(--radius-full);
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--text-white);
+        letter-spacing: 0.5px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      /* ELEMENTOS DE UI / MOCKUPS */
+      .ui-browser-mockup {
+        background: #0d1520;
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        margin-bottom: 22px;
+      }
+
+      .ui-browser-bar {
+        background: #090e17;
+        padding: 10px 14px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border-bottom: 1px solid var(--border-subtle);
+      }
+
+      .ui-dots {
+        display: flex;
+        gap: 6px;
+      }
+
+      .ui-dot {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+      }
+
+      .ui-dot-red { background: #ff5f56; }
+      .ui-dot-yellow { background: #ffbd2e; }
+      .ui-dot-green { background: #27c93f; }
+
+      .ui-browser-url {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 3px 12px;
+        border-radius: 6px;
+        font-size: 11px;
+        color: var(--text-muted);
+        flex: 1;
+        font-family: monospace;
+      }
+
+      .ui-preview-area {
+        padding: 0;
+        overflow: hidden;
+        height: 260px;
+        display: flex;
+        align-items: center;
+        background: #0b1424;
+      }
+
+      .ui-preview-area img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* NÚMEROS E LISTAS */
+      .num-badge {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--accent-cyan);
+        background: rgba(0, 229, 255, 0.1);
+        border: 1px solid rgba(0, 229, 255, 0.2);
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 12px;
+      }
+
+      .feature-list {
+        list-style: none;
+        margin-top: 12px;
+      }
+
+      .feature-list li {
+        position: relative;
+        padding-left: 20px;
+        margin-bottom: 8px;
+        font-size: 14px;
+        color: var(--text-main);
+      }
+
+      .feature-list li::before {
+        content: "▹";
+        position: absolute;
+        left: 0;
+        color: var(--accent-cyan);
+        font-size: 13px;
+      }
+
+      .card-target-box {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid var(--border-subtle);
+        padding: 10px 14px;
+        border-radius: var(--radius-sm);
+        font-size: 12.5px;
+        color: var(--text-muted);
+        margin-top: 14px;
+      }
+
+      .card-target-box strong {
+        color: var(--accent-cyan);
+      }
+
+      /* BOTÃO CTA */
+      .cta-button-ultra {
+        display: block;
+        width: 100%;
+        background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-blue) 100%);
+        color: #020406;
+        text-align: center;
+        padding: 22px 28px;
+        border-radius: var(--radius-md);
+        font-size: 18px;
+        font-weight: 800;
+        text-decoration: none;
+        box-shadow: var(--shadow-glow-cyan);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        margin-top: 25px;
+        transition: all 0.3s ease;
+      }
+
+      .cta-button-ultra:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(0, 229, 255, 0.4);
+      }
+
+      /* ==========================================
+         RESPONSIVIDADE PARA CELULAR (MOBILE)
+      =========================================== */
+      @media (max-width: 768px) {
+        .catalog-wrapper {
+          padding: 0 10px;
+        }
+
+        .page {
+          padding: 35px 20px;
+          min-height: auto;
+          margin-bottom: 20px;
+          border-radius: var(--radius-md);
+        }
+
+        .page-header {
+          margin-bottom: 20px;
+          padding-bottom: 14px;
+        }
+
+        h1.hero-title {
+          font-size: 32px;
+          letter-spacing: -1px;
+          margin-bottom: 16px;
+        }
+
+        h2.page-title {
+          font-size: 26px;
+          letter-spacing: -0.5px;
+          margin-bottom: 10px;
+        }
+
+        .lead-paragraph {
+          font-size: 15px;
+          margin-bottom: 18px;
+        }
+
+        .grid-2 {
+          grid-template-columns: 1fr;
+          gap: 14px;
+        }
+
+        .glass-card {
+          padding: 18px;
+        }
+
+        .hero-media-wrapper {
+          height: 190px;
+          margin-bottom: 18px;
+        }
+
+        .ui-preview-area {
+          height: 200px;
+        }
+
+        .btn-print-float {
+          top: auto;
+          bottom: 20px;
+          right: 20px;
+          padding: 8px 14px;
+          font-size: 12px;
+        }
+
+        .cta-button-ultra {
+          padding: 18px 20px;
+          font-size: 16px;
+        }
+      }
+
+      /* AJUSTES PARA IMPRESSÃO EM PDF */
+      @media print {
+        body { background: transparent; }
+        .no-print { display: none !important; }
+        .catalog-wrapper { max-width: 100%; padding: 0; }
+        .page {
+          margin: 0;
+          box-shadow: none;
+          border: none;
+          page-break-after: always;
+          page-break-inside: avoid;
+          height: 100vh;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- Botão Flutuante de Imprimir PDF -->
+    <button onclick="window.print()" class="btn-print-float no-print" title="Imprimir ou Salvar em PDF">
+      <span>🖨️</span> Imprimir PDF
+    </button>
+
+    <div class="catalog-wrapper">
+
+      <!-- ==========================================
+       PÁGINA 1: CAPA PREMIUM
+      =========================================== -->
+      <section class="page" style="justify-content: space-between;">
+        <div class="page-header">
+          <div class="status-badge">
+            <span class="status-dot"></span>
+            ESTRATÉGIA &amp; EXECUÇÃO DIGITAL
+          </div>
+          <div class="header-index">MARLON BOTELHO</div>
+        </div>
+
+        <div style="margin: auto 0; padding: 20px 0;">
+          <h1 class="hero-title">
+            Presença digital<br>
+            <span class="gradient-text-cyan">completa</span> para o<br>
+            seu negócio.
+          </h1>
+          <p style="font-size: 19px; color: var(--text-muted); max-width: 620px; line-height: 1.5; margin-bottom: 25px;">
+            Site, redes sociais, atendimento automático e tráfego pago — estruturados do início ao fim por um único responsável técnico e comercial.
+          </p>
+
+          <!-- Imagem da Capa -->
+          <div class="hero-media-wrapper" style="height: 250px; margin-bottom: 0;">
+            <img src="https://lh3.googleusercontent.com/d/1NPTyb5V5j9Z2QzZ2WalvFVA4aYnT3zWm" alt="Digital Design &amp; Tech Atmosphere">
+            <div class="media-pill-tag">
+              <span>⚡</span> Padrão Visual de Agência · Operação Enxuta e Acessível
+            </div>
+          </div>
+        </div>
+
+        <div class="page-footer">
+          <div class="brand-signature">
+            <div class="brand-signature-avatar">MB</div>
+            <div>
+              <strong style="color: var(--text-white); display: block; font-size: 13px;">Marlon Botelho</strong>
+              <span style="font-size: 11px;">Soluções Digitais</span>
+            </div>
+          </div>
+          <div style="text-align: right;">
+            <span style="display: block; color: var(--accent-cyan); font-weight: 700; font-size: 11px; letter-spacing: 1px;">ÁREA DE ATUAÇÃO</span>
+            <span style="color: var(--text-white); font-size: 12.5px;">Ponta Grossa &amp; região — PR</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+       PÁGINA 2: SOBRE A PROPOSTA
+      =========================================== -->
+      <section class="page">
+        <div>
+          <div class="page-header">
+            <div class="status-badge">01 · POSICIONAMENTO</div>
+            <div class="header-index">PROPOSTA DE VALOR</div>
+          </div>
+
+          <h2 class="page-title">Um único responsável.<br><span class="gradient-text-cyan">Entrega completa.</span></h2>
+          <p class="lead-paragraph">
+            A maioria dos pequenos e médios negócios não tem uma equipe de marketing dedicada — e contratar uma agência tradicional costuma custar mais do que o orçamento permite.
+          </p>
+
+          <div class="glass-card-highlight">
+            <p style="font-size: 15.5px; color: var(--text-white); line-height: 1.6;">
+              <strong>Aqui, quem planeja, produz e acompanha o resultado é a mesma pessoa.</strong> Isso significa comunicação direta, decisão rápida e um padrão de qualidade consistente que não se perde entre repasses de equipe.
+            </p>
+          </div>
+
+          <div class="grid-2" style="margin-top: 20px;">
+            <div class="glass-card">
+              <div class="num-badge">01</div>
+              <strong style="color: var(--text-white); font-size: 16px; display: block; margin-bottom: 8px;">Tecnologia nos Bastidores</strong>
+              <p style="font-size: 14px; color: var(--text-muted);">
+                O trabalho é sustentado por ferramentas modernas de produção e análise, garantindo velocidade e acabamento de alto nível sem o custo fixo de uma estrutura pesada.
+              </p>
+            </div>
+            <div class="glass-card">
+              <div class="num-badge">02</div>
+              <strong style="color: var(--text-white); font-size: 16px; display: block; margin-bottom: 8px;">Presença no Ar em Dias</strong>
+              <p style="font-size: 14px; color: var(--text-muted);">
+                Entrega ágil e sem burocracias. Sua empresa ganha uma presença digital profissional em tempo recorde, com suporte pessoal em cada detalhe.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="page-footer">
+          <span>Marlon Botelho · Soluções Digitais</span>
+          <span>02 / 11</span>
+        </div>
+      </section>
+
+      <!-- ==========================================
+       PÁGINA 3: METODOLOGIA
+      =========================================== -->
+      <section class="page">
+        <div>
+          <div class="page-header">
+            <div class="status-badge">02 · METODOLOGIA</div>
+            <div class="header-index">FLUXO DE TRABALHO</div>
+          </div>
+
+          <h2 class="page-title">Quatro etapas,<br><span class="gradient-text-cyan">do diagnóstico ao acompanhamento.</span></h2>
+          <p class="lead-paragraph">Um processo estruturado com começo, meio e acompanhamento contínuo.</p>
+
+          <div class="grid-2">
+            <div class="glass-card">
+              <div class="num-badge">01</div>
+              <strong style="color: var(--text-white); font-size: 16px; display: block; margin-bottom: 6px;">Diagnóstico</strong>
+              <p style="font-size: 14px; color: var(--text-muted);">
+                Entendimento do negócio, do público e do que já existe hoje em termos de presença digital — o que manter, o que corrigir e o que criar do zero.
+              </p>
+            </div>
+
+            <div class="glass-card">
+              <div class="num-badge">02</div>
+              <strong style="color: var(--text-white); font-size: 16px; display: block; margin-bottom: 6px;">Estruturação</strong>
+              <p style="font-size: 14px; color: var(--text-muted);">
+                Definição do que faz sentido priorizar primeiro, considerando o momento do negócio e o que traz retorno mais rápido.
+              </p>
+            </div>
+
+            <div class="glass-card">
+              <div class="num-badge">03</div>
+              <strong style="color: var(--text-white); font-size: 16px; display: block; margin-bottom: 6px;">Produção</strong>
+              <p style="font-size: 14px; color: var(--text-muted);">
+                Montagem efetiva de site, identidade visual, conteúdo e automações — com entrega em prazo curto e acabamento refinado.
+              </p>
+            </div>
+
+            <div class="glass-card">
+              <div class="num-badge">04</div>
+              <strong style="color: var(--text-white); font-size: 16px; display: block; margin-bottom: 6px;">Acompanhamento</strong>
+              <p style="font-size: 14px; color: var(--text-muted);">
+                Ajustes mês a mês com base no que está funcionando de fato na prática comercial, e não em suposições teóricas.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="page-footer">
+          <span>Marlon Botelho · Soluções Digitais</span>
+          <span>03 / 11</span>
+        </div>
+      </section>
+
+      <!-- ==========================================
+       PÁGINA 4: VISÃO GERAL DOS SERVIÇOS
+      =========================================== -->
+      <section class="page">
+        <div>
+          <div class="page-header">
+            <div class="status-badge">03 · PORTFÓLIO</div>
+            <div class="header-index">SOLUÇÕES MODULARES</div>
+          </div>
+
+          <h2 class="page-title">Quatro frentes,<br><span class="gradient-text-cyan">contratáveis juntas ou separadas.</span></h2>
+          <p class="lead-paragraph">Estrutura modular planejada para atender cada momento da sua empresa.</p>
+
+          <div class="grid-2">
+            <div class="glass-card" style="border-top: 2px solid var(--accent-cyan);">
+              <div style="font-size: 11px; font-weight: 700; color: var(--accent-cyan); letter-spacing: 1px; margin-bottom: 6px;">FRENTE A</div>
+              <strong style="color: var(--text-white); font-size: 17px; display: block; margin-bottom: 8px;">Presença Digital</strong>
+              <p style="font-size: 14px; color: var(--text-muted);">
+                Base de tudo: site próprio, identidade visual e canais estruturados para passar credibilidade instantânea.
+              </p>
+            </div>
+
+            <div class="glass-card" style="border-top: 2px solid var(--accent-cyan);">
+              <div style="font-size: 11px; font-weight: 700; color: var(--accent-cyan); letter-spacing: 1px; margin-bottom: 6px;">FRENTE B</div>
+              <strong style="color: var(--text-white); font-size: 17px; display: block; margin-bottom: 8px;">Atendimento Automático</strong>
+              <p style="font-size: 14px; color: var(--text-muted);">
+                Resposta rápida no WhatsApp comercial mesmo fora do expediente, sem perder o tom humano do negócio.
+              </p>
+            </div>
+
+            <div class="glass-card" style="border-top: 2px solid var(--accent-cyan);">
+              <div style="font-size: 11px; font-weight: 700; color: var(--accent-cyan); letter-spacing: 1px; margin-bottom: 6px;">FRENTE C</div>
+              <strong style="color: var(--text-white); font-size: 17px; display: block; margin-bottom: 8px;">Conteúdo Mensal</strong>
+              <p style="font-size: 14px; color: var(--text-muted);">
+                Presença constante e estratégica nas redes sociais, sem exigir que o dono do negócio pare sua rotina para postar.
+              </p>
+            </div>
+
+            <div class="glass-card" style="border-top: 2px solid var(--accent-cyan);">
+              <div style="font-size: 11px; font-weight: 700; color: var(--accent-cyan); letter-spacing: 1px; margin-bottom: 6px;">FRENTE D</div>
+              <strong style="color: var(--text-white); font-size: 17px; display: block; margin-bottom: 8px;">Tráfego &amp; Relatório</strong>
+              <p style="font-size: 14px; color: var(--text-muted);">
+                Anúncios pensados para gerar resultado real, com acompanhamento e relatórios em linguagem simples.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="page-footer">
+          <span>Marlon Botelho · Soluções Digitais</span>
+          <span>04 / 11</span>
+        </div>
+      </section>
+
+      <!-- ==========================================
+       PÁGINA 5: SERVIÇO 01 - PRESENÇA DIGITAL
+      =========================================== -->
+      <section class="page">
+        <div>
+          <div class="page-header">
+            <div class="status-badge">SERVIÇO 01 · FUNDAÇÃO</div>
+            <div class="header-index">ESTRUTURA ONLINE</div>
+          </div>
+
+          <h2 class="page-title">Presença Digital</h2>
+          <p class="lead-paragraph" style="margin-bottom: 16px;">Uma base profissional para a sua empresa ser encontrada e escolhida.</p>
+
+          <!-- Mockup Nativo UI + Imagem de Presença Digital -->
+          <div class="ui-browser-mockup">
+            <div class="ui-browser-bar">
+              <div class="ui-dots">
+                <div class="ui-dot ui-dot-red"></div>
+                <div class="ui-dot ui-dot-yellow"></div>
+                <div class="ui-dot ui-dot-green"></div>
+              </div>
+              <div class="ui-browser-url">https://seunegocio.com.br</div>
+            </div>
+            <div class="ui-preview-area">
+              <img src="https://lh3.googleusercontent.com/d/1FOlP9zskZw5N4q-rlMPS0JkjuuZTa8nD" alt="Presença Digital - Websites e Landing Pages">
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="glass-card">
+              <strong style="color: var(--accent-cyan); font-size: 15px; display: block; margin-bottom: 8px;">O que pode incluir:</strong>
+              <ul class="feature-list">
+                <li>Site institucional profissional e responsivo</li>
+                <li>Identidade visual (logotipo, cores, tipografia)</li>
+                <li>Perfis configurados no Instagram e Facebook</li>
+                <li>Ficha no Google (Google Meu Negócio)</li>
+                <li>Padronização visual de todos os canais</li>
+              </ul>
+            </div>
+            <div class="glass-card">
+              <strong style="color: var(--accent-cyan); font-size: 15px; display: block; margin-bottom: 8px;">Benefício para o negócio:</strong>
+              <p style="font-size: 14px; color: var(--text-muted);">
+                Autoridade e confiança imediata. O cliente que pesquisa pela sua marca encontra canais organizados, claros e convidativos.
+              </p>
+              <div class="card-target-box">
+                <strong>🎯 Ideal para:</strong> Negócios sem site ou com apresentação visual amadora.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="page-footer">
+          <span>Marlon Botelho · Soluções Digitais</span>
+          <span>05 / 11</span>
+        </div>
+      </section>
+
+      <!-- ==========================================
+       PÁGINA 6: SERVIÇO 02 - ATENDIMENTO AUTOMÁTICO
+      =========================================== -->
+      <section class="page">
+        <div>
+          <div class="page-header">
+            <div class="status-badge">SERVIÇO 02 · CONVERSÃO</div>
+            <div class="header-index">COMUNICAÇÃO</div>
+          </div>
+
+          <h2 class="page-title">Atendimento Automático</h2>
+          <p class="lead-paragraph" style="margin-bottom: 16px;">Atendimento rápido, organizado e alinhado ao seu negócio.</p>
+
+          <!-- Imagem WhatsApp Chatbot -->
+          <div class="hero-media-wrapper">
+            <img src="https://lh3.googleusercontent.com/d/1NBaQ_-yjgvcG-YSH5wN3Ctm3Vq51ffco" alt="WhatsApp Business &amp; Mobile Automation">
+            <div class="media-pill-tag">
+              <span>💬</span> Resposta Imediata · Fluxo Inteligente · WhatsApp Business
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="glass-card">
+              <strong style="color: var(--accent-cyan); font-size: 15px; display: block; margin-bottom: 8px;">O que pode incluir:</strong>
+              <ul class="feature-list">
+                <li>Configuração completa do WhatsApp Business</li>
+                <li>Respostas automáticas para dúvidas frequentes</li>
+                <li>Mensagem de ausência e horário de atendimento</li>
+                <li>Catálogo de produtos ou serviços no WhatsApp</li>
+                <li>Direcionamento ágil para orçamento ou contato</li>
+              </ul>
+            </div>
+            <div class="glass-card">
+              <strong style="color: var(--accent-cyan); font-size: 15px; display: block; margin-bottom: 8px;">Benefício para o negócio:</strong>
+              <p style="font-size: 14px; color: var(--text-muted);">
+                O cliente recebe atendimento imediato mesmo fora do horário comercial, evitando perda de leads por demora no primeiro contato.
+              </p>
+              <div class="card-target-box">
+                <strong>🎯 Ideal para:</strong> Negócios com alto volume de mensagens e dúvidas diárias.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="page-footer">
+          <span>Marlon Botelho · Soluções Digitais</span>
+          <span>06 / 11</span>
+        </div>
+      </section>
+
+      <!-- ==========================================
+       PÁGINA 7: SERVIÇO 03 - CONTEÚDO MENSAL
+      =========================================== -->
+      <section class="page">
+        <div>
+          <div class="page-header">
+            <div class="status-badge">SERVIÇO 03 · AUTORIDADE</div>
+            <div class="header-index">REDES SOCIAIS</div>
+          </div>
+
+          <h2 class="page-title">Conteúdo Mensal</h2>
+          <p class="lead-paragraph" style="margin-bottom: 16px;">Presença constante para a sua marca sem sobrecarregar sua rotina.</p>
+
+          <!-- Imagem Conteúdo Mensal -->
+          <div class="hero-media-wrapper">
+            <img src="https://lh3.googleusercontent.com/d/19RNaED1-A6-r_aWL2HeiDqCbW5DS7gJg" alt="Creative Studio Content Planning">
+            <div class="media-pill-tag">
+              <span>🎨</span> Planejamento Editorial · Design de Posts · Roteiros
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="glass-card">
+              <strong style="color: var(--accent-cyan); font-size: 15px; display: block; margin-bottom: 8px;">O que pode incluir:</strong>
+              <ul class="feature-list">
+                <li>Planejamento editorial direcionado do mês</li>
+                <li>Criação de posts (artes visuais e legendas)</li>
+                <li>Roteiro e edição de vídeos curtos</li>
+                <li>Calendário de publicação organizado</li>
+                <li>Materiais adaptados para Instagram, Facebook e WhatsApp</li>
+              </ul>
+            </div>
+            <div class="glass-card">
+              <strong style="color: var(--accent-cyan); font-size: 15px; display: block; margin-bottom: 8px;">Benefício para o negócio:</strong>
+              <p style="font-size: 14px; color: var(--text-muted);">
+                Sua marca permanece ativa na mente dos clientes, gerando autoridade constante sem que você precise parar o dia a dia da empresa para postar.
+              </p>
+              <div class="card-target-box">
+                <strong>🎯 Ideal para:</strong> Negócios que não conseguem manter regularidade nas redes.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="page-footer">
+          <span>Marlon Botelho · Soluções Digitais</span>
+          <span>07 / 11</span>
+        </div>
+      </section>
+
+      <!-- ==========================================
+       PÁGINA 8: SERVIÇO 04 - TRÁFEGO PAGO
+      =========================================== -->
+      <section class="page">
+        <div>
+          <div class="page-header">
+            <div class="status-badge">SERVIÇO 04 · CRESCIMENTO</div>
+            <div class="header-index">ANÚNCIOS &amp; DADOS</div>
+          </div>
+
+          <h2 class="page-title">Tráfego Pago e Análise de Resultados</h2>
+          <p class="lead-paragraph" style="margin-bottom: 16px;">Mais clareza para investir melhor e atrair clientes qualificados.</p>
+
+          <!-- Imagem Tráfego Pago & Segmentação -->
+          <div class="hero-media-wrapper">
+            <img src="https://lh3.googleusercontent.com/d/1OeXJQfxSKBhSBSt8FM0iPWoJyEZkqyKH" alt="Performance Marketing Dashboard">
+            <div class="media-pill-tag">
+              <span>📊</span> Campanhas Segmentadas · Otimização · Relatórios Claros
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="glass-card">
+              <strong style="color: var(--accent-cyan); font-size: 15px; display: block; margin-bottom: 8px;">O que pode incluir:</strong>
+              <ul class="feature-list">
+                <li>Estruturação e gestão técnica de campanhas</li>
+                <li>Segmentação de público por região e interesse</li>
+                <li>Criação ou adaptação de peças e textos de anúncio</li>
+                <li>Acompanhamento e ajustes ao longo do mês</li>
+                <li>Relatório mensal em linguagem simples</li>
+              </ul>
+            </div>
+            <div class="glass-card">
+              <strong style="color: var(--accent-cyan); font-size: 15px; display: block; margin-bottom: 8px;">Benefício para o negócio:</strong>
+              <p style="font-size: 14px; color: var(--text-muted);">
+                Atração contínua de clientes com perfil de compra, sem desperdício de verba em público desqualificado.
+              </p>
+              <div class="card-target-box" style="border-left: 3px solid var(--accent-orange);">
+                📌 <em>O valor investido diretamente nas plataformas (Meta/Google) é definido pelo cliente e separado da gestão do serviço.</em>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="page-footer">
+          <span>Marlon Botelho · Soluções Digitais</span>
+          <span>08 / 11</span>
+        </div>
+      </section>
+
+      <!-- ==========================================
+       PÁGINA 9: DIFERENCIAIS
+      =========================================== -->
+      <section class="page">
+        <div>
+          <div class="page-header">
+            <div class="status-badge">04 · DIFERENCIAIS</div>
+            <div class="header-index">VANTAGENS COMPETITIVAS</div>
+          </div>
+
+          <h2 class="page-title">O que muda quando é<br><span class="gradient-text-cyan">uma pessoa só, do início ao fim.</span></h2>
+          <p class="lead-paragraph">Uma operação digital completa, com atendimento direto e execução inteligente.</p>
+
+          <div class="grid-2">
+            <div class="glass-card">
+              <strong style="color: var(--accent-cyan); font-size: 16px; display: block; margin-bottom: 6px;">Sem repasse entre equipes</strong>
+              <p style="font-size: 14px; color: var(--text-muted);">
+                A mesma pessoa que diagnostica é quem produz e quem acompanha o resultado depois. Nada se perde em intermediários.
+              </p>
+            </div>
+
+            <div class="glass-card">
+              <strong style="color: var(--accent-cyan); font-size: 16px; display: block; margin-bottom: 6px;">Comunicação direta</strong>
+              <p style="font-size: 14px; color: var(--text-muted);">
+                Sem atendente, sem fila de suporte. A conversa é sempre direta com quem decide e executa.
+              </p>
+            </div>
+
+            <div class="glass-card">
+              <strong style="color: var(--accent-cyan); font-size: 16px; display: block; margin-bottom: 6px;">Prazos curtos</strong>
+              <p style="font-size: 14px; color: var(--text-muted);">
+                Presença digital estruturada em dias, não em meses de fila de produção com burocracias desnecessárias.
+              </p>
+            </div>
+
+            <div class="glass-card">
+              <strong style="color: var(--accent-cyan); font-size: 16px; display: block; margin-bottom: 6px;">Ajuste rápido</strong>
+              <p style="font-size: 14px; color: var(--text-muted);">
+                Quem decide é quem executa — uma mudança de rumo não depende de reuniões prolongadas entre setores.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="page-footer">
+          <span>Marlon Botelho · Soluções Digitais</span>
+          <span>09 / 11</span>
+        </div>
+      </section>
+
+      <!-- ==========================================
+       PÁGINA 10: COMO CONTRATAR
+      =========================================== -->
+      <section class="page">
+        <div>
+          <div class="page-header">
+            <div class="status-badge">05 · PROCESSO</div>
+            <div class="header-index">CONTRATAÇÃO SIMPLIFICADA</div>
+          </div>
+
+          <h2 class="page-title">Como funciona a contratação.</h2>
+          <p class="lead-paragraph">Um fluxo claro e ágil para iniciar sua presença digital sem atritos:</p>
+
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div class="glass-card" style="display: flex; align-items: center; gap: 18px; padding: 16px 20px;">
+              <div class="num-badge" style="margin: 0; flex-shrink: 0;">1</div>
+              <div>
+                <strong style="color: var(--text-white); font-size: 15.5px; display: block;">Conversa Inicial &amp; Diagnóstico</strong>
+                <span style="font-size: 13.5px; color: var(--text-muted);">Mapeamento rápido das necessidades e do momento do seu negócio.</span>
+              </div>
+            </div>
+
+            <div class="glass-card" style="display: flex; align-items: center; gap: 18px; padding: 16px 20px;">
+              <div class="num-badge" style="margin: 0; flex-shrink: 0;">2</div>
+              <div>
+                <strong style="color: var(--text-white); font-size: 15.5px; display: block;">Definição de Prioridades</strong>
+                <span style="font-size: 13.5px; color: var(--text-muted);">Escolha das frentes mais estratégicas (avulsas ou em conjunto).</span>
+              </div>
+            </div>
+
+            <div class="glass-card" style="display: flex; align-items: center; gap: 18px; padding: 16px 20px;">
+              <div class="num-badge" style="margin: 0; flex-shrink: 0;">3</div>
+              <div>
+                <strong style="color: var(--text-white); font-size: 15.5px; display: block;">Apresentação da Proposta</strong>
+                <span style="font-size: 13.5px; color: var(--text-muted);">Definição transparente de escopo, prazos de entrega e valores.</span>
+              </div>
+            </div>
+
+            <div class="glass-card" style="display: flex; align-items: center; gap: 18px; padding: 16px 20px;">
+              <div class="num-badge" style="margin: 0; flex-shrink: 0;">4</div>
+              <div>
+                <strong style="color: var(--text-white); font-size: 15.5px; display: block;">Produção e Entrega Ágil</strong>
+                <span style="font-size: 13.5px; color: var(--text-muted);">Execução com padrão refinado e colocação de tudo no ar.</span>
+              </div>
+            </div>
+
+            <div class="glass-card" style="display: flex; align-items: center; gap: 18px; padding: 16px 20px;">
+              <div class="num-badge" style="margin: 0; flex-shrink: 0;">5</div>
+              <div>
+                <strong style="color: var(--text-white); font-size: 15.5px; display: block;">Acompanhamento Contínuo</strong>
+                <span style="font-size: 13.5px; color: var(--text-muted);">Otimizações periódicas e relatórios nos serviços recorrentes.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="page-footer">
+          <span>Marlon Botelho · Soluções Digitais</span>
+          <span>10 / 11</span>
+        </div>
+      </section>
+
+      <!-- ==========================================
+       PÁGINA 11: CHAMADA PARA AÇÃO (CTA)
+      =========================================== -->
+      <section class="page" style="justify-content: space-between;">
+        <div class="page-header">
+          <div class="status-badge">CANAL DIRETO</div>
+          <div class="header-index">PRÓXIMO PASSO</div>
+        </div>
+
+        <div style="text-align: center; margin: auto 0; padding: 20px 0;">
+          <h2 class="hero-title" style="font-size: 38px; line-height: 1.2; margin-bottom: 20px;">
+            Vamos estruturar a<br>
+            <span class="gradient-text-cyan">presença digital</span> do seu negócio?
+          </h2>
+          <p style="font-size: 18px; color: var(--text-muted); max-width: 580px; margin: 0 auto 30px auto; line-height: 1.6;">
+            Uma conversa inicial ajuda a identificar o que sua empresa precisa criar, corrigir ou automatizar primeiro.
+          </p>
+
+          <a href="https://wa.me/5542988680182?text=Ol%C3%A1%20Marlon%2C%20vi%20o%20cat%C3%A1logo%20e%20gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito." target="_blank" class="cta-button-ultra" style="max-width: 580px; margin: 0 auto; display: inline-flex; align-items: center; justify-content: center; gap: 12px;">
+            <span>💬</span> Falar com Marlon no WhatsApp
+          </a>
+        </div>
+
+        <div class="page-footer">
+          <div class="brand-signature">
+            <div class="brand-signature-avatar">MB</div>
+            <div>
+              <strong style="color: var(--text-white); display: block; font-size: 13px;">Marlon Botelho</strong>
+              <span style="font-size: 11px;">Soluções Digitais</span>
+            </div>
+          </div>
+          <div style="text-align: right;">
+            <span style="display: block; color: var(--accent-cyan); font-weight: 700; font-size: 11px; letter-spacing: 1px;">ATUAÇÃO</span>
+            <span style="color: var(--text-white); font-size: 12.5px;">Ponta Grossa &amp; região — PR</span>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+</body>
+</html>
